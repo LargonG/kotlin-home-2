@@ -18,7 +18,7 @@ interface SelfMergeable<T> {
  *  - циклы
  *  - стандартные коллекции
  *
- * Детали внутренней реазации должны быть спрятаны - (А они нужны?)
+ * Детали внутренней реализации должны быть спрятаны - (А они нужны?)
  * Создание - только через single() и plus()
  *
  * Дерево совсем без элементов не предусмотрено
@@ -37,7 +37,7 @@ class BinomialTree<T: Comparable<T>>
      */
     override fun plus(other: BinomialTree<T>): BinomialTree<T> {
         if (order != other.order)
-            throw IllegalArgumentException("Different orders of trees");
+            throw IllegalArgumentException("Different orders of trees")
 
         // Поддерживаем инвариант, что дети отсортированы в порядке убывания order
         return if (value < other.value) {

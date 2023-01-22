@@ -13,7 +13,7 @@ import java.rmi.UnexpectedException
  *  - циклы
  *  - стандартные коллекции
  *
- * Детали внутренней реазации должны быть спрятаны
+ * Детали внутренней реализации должны быть спрятаны
  * Создание - только через single() и plus()
  *
  * Куча совсем без элементов не предусмотрена => от Nullable значения можно избавиться
@@ -77,7 +77,7 @@ class BinomialHeap<T: Comparable<T>>
             // last - последний элемент слияния двух куч, который мы ещё не добавили
             // aIterator - итератор по коллекции деревьев из первой кучи
             // bIterator - итератор по коллекции деревьев из второй кучи
-            // Коллекции деревьев отсортированы в порядке возрастания их .order поля
+            // Коллекции деревьев отсортированы в порядке возрастания их order поля
             when {
                 a.order == b.order -> {
                     // Сливаем деревья
@@ -134,7 +134,7 @@ class BinomialHeap<T: Comparable<T>>
                 }
                 last.order < elem.order -> {
                     return if (iterator.hasNext()) {
-                        FList.Cons(last, plus(iterator.next(), elem, iterator));
+                        FList.Cons(last, plus(iterator.next(), elem, iterator))
                     } else {
                         flistOf(last, elem)
                     }
