@@ -41,9 +41,9 @@ class BinomialTree<T: Comparable<T>>
 
         // Поддерживаем инвариант, что дети отсортированы в порядке возрастания order
         return if (value < other.value) {
-            BinomialTree(value, FList.Cons(other, children.reverse()).reverse())
+            BinomialTree(value, FList.Cons(other, children))
         } else {
-            BinomialTree(other.value, FList.Cons(this, other.children.reverse()).reverse())
+            BinomialTree(other.value, FList.Cons(this, other.children))
         }
     }
 

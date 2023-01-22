@@ -150,11 +150,11 @@ class BinomialHeap<T: Comparable<T>>
      * Требуемая сложность - O(log(n))
      */
     override fun plus(other: BinomialHeap<T>): BinomialHeap<T> {
-        val aIterator = trees.iterator()
+        val aIterator = trees.reverse().iterator()
         val a = aIterator.next() // Существует
-        val bIterator = other.trees.iterator()
+        val bIterator = other.trees.reverse().iterator()
         val b = bIterator.next() // Существует
-        return BinomialHeap(plus(a, b, aIterator, bIterator))
+        return BinomialHeap(plus(a, b, aIterator, bIterator).reverse())
     }
 
     /*
