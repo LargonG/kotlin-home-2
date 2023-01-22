@@ -39,7 +39,7 @@ class BinomialTree<T: Comparable<T>>
         if (order != other.order)
             throw IllegalArgumentException("Different orders of trees");
 
-        // Поддерживаем инвариант, что дети отсортированы в порядке возрастания order
+        // Поддерживаем инвариант, что дети отсортированы в порядке убывания order
         return if (value < other.value) {
             BinomialTree(value, FList.Cons(other, children))
         } else {
